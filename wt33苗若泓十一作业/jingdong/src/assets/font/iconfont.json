@@ -1,0 +1,107 @@
+{
+  "id": "2111807",
+  "name": "京东模拟",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4744326",
+      "name": "bin",
+      "font_class": "bin",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "3836986",
+      "name": "省略号",
+      "font_class": "more",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "5449918",
+      "name": "左箭头",
+      "font_class": "arrow-right",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "5468069",
+      "name": "左箭头",
+      "font_class": "iconfontjiantouzuo",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "7933321",
+      "name": "防御",
+      "font_class": "fangyuip",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "10539184",
+      "name": "放大镜",
+      "font_class": "41",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "256737",
+      "name": "放大镜",
+      "font_class": "fangdajing",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "831061",
+      "name": "平板触控",
+      "font_class": "fill1",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1012425",
+      "name": "电脑",
+      "font_class": "diannao",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "3424882",
+      "name": "上",
+      "font_class": "shang",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "6250378",
+      "name": "上",
+      "font_class": "up",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "9791753",
+      "name": "app",
+      "font_class": "app",
+      "unicode": "e6cb",
+      "unicode_decimal": 59083
+    },
+    {
+      "icon_id": "13954308",
+      "name": "手机",
+      "font_class": "ziyuan",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "16580374",
+      "name": "闹钟",
+      "font_class": "icon-test",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    }
+  ]
+}

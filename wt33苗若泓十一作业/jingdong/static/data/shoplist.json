@@ -1,0 +1,31 @@
+{
+    "shoplist":[
+        {
+            "imgsrc":"../../../static/mainpageexImg/item01.jpg",
+            "name":"敬腾家用不锈钢手动叶面积受压多工鞥面条机水果......",
+            "price":"￥99",
+            "rate":"好评率94%"
+        },
+        {
+            "imgsrc":"../../../static/mainpageexImg/item02.jpg",
+            "name":"敬腾家用不锈钢手动叶面积受压多工鞥面条机水果......",
+            "price":"￥99",
+            "rate":"好评率84%"
+        },
+        {
+            "imgsrc":"../../../static/mainpageexImg/item03.jpg",
+            "name":"敬腾家用不锈钢手动叶面积受压多工鞥面条机水果......",
+            "price":"￥89",
+            "rate":"好评率84%"
+        },
+        {
+            "imgsrc":"../../../static/mainpageexImg/item04.jpg",
+            "name":"敬腾家用不锈钢手动叶面积受压多工鞥面条机水果......",
+            "price":"￥86",
+            "rate":"好评率91%"
+        }
+
+    ]
+     
+    
+}

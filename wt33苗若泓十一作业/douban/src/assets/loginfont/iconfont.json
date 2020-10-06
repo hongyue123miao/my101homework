@@ -1,0 +1,23 @@
+{
+  "id": "2111510",
+  "name": "豆瓣登录",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1802227",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "14607292",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}

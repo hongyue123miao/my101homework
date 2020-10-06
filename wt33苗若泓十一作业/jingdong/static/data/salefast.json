@@ -1,0 +1,24 @@
+{
+    "sales":[
+        {
+            "src":"http://img10.360buyimg.com/mobilecms/s372x372_jfs/t1/152094/39/1158/250350/5f7418edE7633d48c/c502380a9a3d8ddb.jpg!q70.dpg.webp",
+            "nowPrice":"￥80",
+            "pathPrice":"￥150"
+        },
+        {
+            "src":"http://img14.360buyimg.com/mobilecms/s372x372_jfs/t1/112653/3/1452/107919/5e97d113Ee85bf05c/165534a9d088771c.jpg!q70.dpg.webp",
+            "nowPrice":"￥10",
+            "pathPrice":"￥30"
+        },
+        {
+            "src":"//img14.360buyimg.com/mobilecms/s372x372_jfs/t1/93499/17/90/221850/5da6d4ebE9747a490/8b167328e1dadff8.jpg!q70.dpg.webp",
+            "nowPrice":"￥40",
+            "pathPrice":"￥100"
+        },
+        {
+            "src":"//img13.360buyimg.com/mobilecms/s372x372_jfs/t1/147211/16/9484/287918/5f728dc5Ec5c4dbd5/a61cb1378c0bc33e.jpg!q70.dpg.webp",
+            "nowPrice":"￥80",
+            "pathPrice":"￥140"
+        }
+    ]
+}

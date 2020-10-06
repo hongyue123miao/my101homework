@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <style>
+        input{
+            height: 28px;
+        }
+        div{
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 20px;
+            position: relative;
+        }
+        span{
+            position: absolute;
+            left: 100px;
+            top: 0px;
+            display: inline-block;
+            font-size: 12px;
+            background-color: gainsboro;
+            cursor: pointer;
+            width: 90px;
+            height: 32px;
+            margin-bottom: 12px;
+            line-height: 30px;
+            border: 1px solid black;
+            border-left: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text"><span>发送验证码</span>
+    </div>
+    <script>
+        var num=60
+        var flag=true
+        var  span=document.querySelector('span')
+        var input=document.querySelector('input')
+        span.onclick=function(){
+        if(flag){
+            flag=false
+            var timer=setInterval(() => {
+                if(num==0){
+                   num=60
+                   clearInterval(timer)
+                   span.innerHTML=num+'重新发送'
+                   flag=true
+                }
+                span.innerHTML=num+'秒后重发'
+                num--
+            }, 1000);
+        }
+         
+           
+        }
+    </script>
+</body>
+</html>

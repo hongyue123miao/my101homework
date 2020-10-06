@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生轮播图</title>
+    <script src="js/moves.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .total {
+            margin: 0 auto;
+            width: 900px;
+        }
+
+        .containerbox {
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            /* border: 1px solid black; */
+            width: 300px;
+            height: 200px;
+        }
+
+        .ulbox {
+            position: absolute;
+            /* left: -300px; */
+            box-sizing: border-box;
+            width: 1200px;
+            height: 200px;
+            outline: 1px solid red;
+
+        }
+
+        .ulbox>li {
+            box-sizing: border-box;
+            /* border: 1px solid blue; */
+            width: 300px;
+            height: 200px;
+            float: left;
+        }
+
+        .ulbox>li>img {
+            width: 300px;
+            height: 200px;
+        }
+
+        .pagebox {
+            width: 100px;
+            right: 0px;
+            bottom: 0px;
+            /* background-color: red; */
+            /* border: 1px solid red; */
+            position: absolute;
+        }
+
+        .pagebox>li {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            float: left;
+        }
+
+        .left {
+            background-color: red;
+            position: absolute;
+            left: 0px;
+            top: 110px;
+            z-index: 5;
+        }
+
+        .right {
+            background-color: red;
+            position: absolute;
+            right: 0px;
+            top: 110px;
+            z-index: 5;
+        }
+
+        .active {
+            background-color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="total">
+        <h2>原生js轮播图（无缝）</h2>
+        <div class="containerbox">
+            <button class="left">left</button>
+            <button class="right">right</button>
+            <ul class="ulbox">
+                <li><img src="img/img1.jpg" alt=""></li>
+                <li><img src="img/img2.jpg" alt=""></li>
+                <li><img src="img/img3.jpg" alt=""></li>
+                <li><img src="img/img1.jpg" alt=""></li>
+            </ul>
+
+            <ul class="pagebox">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var index
+            let ulbox = document.querySelector('.ulbox')
+            let pagebox = document.querySelector('.pagebox')
+            let pageboxli = pagebox.children
+            let ulboxli = ulbox.children[0]
+            let right = document.querySelector('.right')
+            let left = document.querySelector('.left')
+            for (let i = 0; i < pageboxli.length; i++) {
+                pageboxli[i].onclick = function () {
+                    pageboxli[i].index = i
+                    for (let i = 0; i < pageboxli.length; i++) {
+                        pageboxli[i].className = ''
+                    }
+                    this.className = "active"
+                    index = this.index
+                    pages = index
+                    num = index
+                    moves(ulbox, -ulboxli.offsetWidth * index)
+                }
+            }
+
+            var num = 0
+            var pages = 0
+            var flag = true
+            var t
+
+            right.onclick = function () {
+                if (flag) {
+                    flag = false
+                    if (num == 3) {
+                        ulbox.style.left = 0 + 'px'
+                        num = 0
+                    }
+                    num++
+                    moves(ulbox, -ulboxli.offsetWidth * num, function () {
+                        flag = true
+                    })
+                    if (pages == 2) {
+                        pages = -1
+                    }
+                    pages++
+                    for (let i = 0; i < pageboxli.length; i++) {
+                        pageboxli[i].className = ''
+
+                    }
+                    pageboxli[pages].className = 'active'
+                }
+            }
+
+
+
+            left.onclick = function () {
+                if (flag) {
+                    flag = false;
+                    if (num == 0) {
+                        ulbox.style.left = -900 + 'px'
+                        num = 3
+                    }
+                    num--
+                    moves(ulbox, -ulboxli.offsetWidth * num,function(){
+                        flag=true
+                    })
+                    if (pages == 0) {
+                        pages = 3
+                    }
+                    pages--
+                    for (let i = 0; i < pageboxli.length; i++) {
+                        pageboxli[i].className = ''
+
+                    }
+                    pageboxli[pages].className = 'active'
+                }
+            }
+
+
+             t = setInterval(() => {
+                right.click()
+            }, 3000);
+
+            ulbox.addEventListener('mouseenter',function(){
+               clearInterval(t)
+            })
+            ulbox.addEventListener('mouseleave',function(){
+                 t = setInterval(() => {
+                right.click()
+            }, 3000);
+            })
+
+        })
+    </script>
+</body>
+
+</html>

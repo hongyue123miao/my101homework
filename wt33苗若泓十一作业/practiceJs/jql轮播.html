@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jql轮播</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .total {
+            margin: 0 auto;
+            width: 900px;
+        }
+
+        .containerbox {
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+            /* border: 1px solid black; */
+            width: 300px;
+            height: 200px;
+        }
+
+        .ulbox {
+            position: absolute;
+            /* left: -300px; */
+            box-sizing: border-box;
+            width: 1200px;
+            height: 200px;
+            outline: 1px solid red;
+
+        }
+
+        .ulbox>li {
+            box-sizing: border-box;
+            /* border: 1px solid blue; */
+            width: 300px;
+            height: 200px;
+            float: left;
+        }
+
+        .ulbox>li>img {
+            width: 300px;
+            height: 200px;
+        }
+
+        .pagebox {
+            width: 100px;
+            right: 0px;
+            bottom: 0px;
+            /* background-color: red; */
+            /* border: 1px solid red; */
+            position: absolute;
+        }
+
+        .pagebox>li {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            float: left;
+        }
+
+        .left {
+            background-color: red;
+            position: absolute;
+            left: 0px;
+            top: 110px;
+            z-index: 5;
+        }
+
+        .right {
+            background-color: red;
+            position: absolute;
+            right: 0px;
+            top: 110px;
+            z-index: 5;
+        }
+
+        .active {
+            background-color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="total">
+        <h2>jquery轮播图（无缝）</h2>
+        <div class="containerbox">
+            <button class="left">left</button>
+            <button class="right">right</button>
+            <ul class="ulbox">
+                <li class="run"><img src="img/img1.jpg" alt=""></li>
+                <li class="run"><img src="img/img2.jpg" alt=""></li>
+                <li class="run"><img src="img/img3.jpg" alt=""></li>
+                <li class="run"><img src="img/img1.jpg" alt=""></li>
+            </ul>
+
+            <ul class="pagebox">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('.pagebox').find('li').on('click', function () {
+                var index = $(this).index()
+                $('.pagebox').find('li').removeClass('active')
+                $('.pagebox').find('li').eq(index).addClass('active')
+                $(".ulbox").animate({
+                    left: -$(".run").eq(0).width() * index
+                });
+                num = index
+                page = index
+
+            })
+            var t
+            var num = 0
+            var page = 0
+            var flag = true
+            $('.right').on('click', () => {
+                if (flag) {
+                    flag = false
+                    if (num == 3) {
+                        $(".ulbox")[0].style.left = 0 + 'px'
+                        num = 0
+                    }
+                    num++
+                    $(".ulbox").animate({
+                        left: -$(".run").eq(0).width() * num
+                    }, function () {
+                        flag = true
+                    });
+                    if (page == 2) { page = -1 }
+                    page++
+                    $('.pagebox').find('li').removeClass('active')
+                    $('.pagebox').find('li').eq(page).addClass('active')
+                }
+            })
+
+
+
+
+            $('.left').on('click', () => {
+                if (flag) {
+                    flag = false
+                    if (num == 0) {
+                        $(".ulbox")[0].style.left = -900 + 'px'
+                        num = 3
+                    }
+                    num--
+                    $(".ulbox").animate({
+                        left: -$(".run").eq(0).width() * num
+                    }, function () {
+                        flag = true
+                    });
+                    if (page == 0) { page = 3 }
+                    page--
+                    $('.pagebox').find('li').removeClass('active')
+                    $('.pagebox').find('li').eq(page).addClass('active')
+                }
+            })
+
+
+
+
+            t = setInterval(() => {
+                $('.right').click()
+            }, 3000);
+            $('.ulbox').on('mouseenter', function () {
+                clearInterval(t)
+            })
+            $('.ulbox').on('mouseleave', function () {
+                t = setInterval(() => {
+                    $('.right').click()
+                }, 3000);
+            })
+
+        })
+    </script>
+</body>
+
+</html>
